@@ -1,12 +1,35 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/Home";
+import Country from "./pages/Country";
+import RootLayout from "./pages/RootLayout";
+import Destination from "./pages/Destination";
+import Details from "./pages/Details";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: <RootLayout />,
+    children: [
+      {
+        index: true,
+        element: <Home />,
+      },
+      {
+        path: "/continent/:continentID",
+        element: <Country />,
+      },
+      {
+        path: "/continent/:continentID/:countryID",
+        element: <Destination />,
+      },
+      {
+        path: "/continent/:continentID/:countryID/:destinationID",
+        element: <Details />,
+      },
+    ],
   },
+  {},
 ]);
 
 function App() {
