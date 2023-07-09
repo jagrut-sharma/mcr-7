@@ -20,11 +20,11 @@ const router = createBrowserRouter([
         element: <Country />,
       },
       {
-        path: "/continent/:continentID/:countryID",
+        path: "/continent/:continentID/country/:countryID",
         element: <Destination />,
       },
       {
-        path: "/continent/:continentID/:countryID/:destinationID",
+        path: "/continent/:continentID/country/:countryID/destination/:destinationID",
         element: <Details />,
       },
     ],

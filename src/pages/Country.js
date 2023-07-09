@@ -20,7 +20,10 @@ export default function Country() {
 
       <div className="mt-8 flex gap-8 justify-center">
         {countries.map((country) => (
-          <Link to={`/continent/${continentID}/${country.id}`} key={country.id}>
+          <Link
+            to={`/continent/${continentID}/country/${country.id}`}
+            key={country.id}
+          >
             <div className="relative">
               <img
                 src={country.image}

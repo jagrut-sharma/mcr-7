@@ -23,7 +23,7 @@ export default function Destination() {
       <div className="mt-8 flex gap-8 justify-center">
         {selectedCountry.destinations.map((destination) => (
           <Link
-            to={`/continent/${continentID}/${countryID}/${destination.id}`}
+            to={`/continent/${continentID}/country/${countryID}/destination/${destination.id}`}
             key={destination.id}
           >
             <div className="relative">

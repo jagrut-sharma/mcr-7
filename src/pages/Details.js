@@ -24,12 +24,8 @@ export default function Details() {
       </h1>
 
       <div className="flex justify-center mt-4 w-[60%] gap-4">
-        <div className="h-max">
-          <img
-            src={selectedDestination.image}
-            alt={selectedDestination.name}
-            className=""
-          />
+        <div>
+          <img src={selectedDestination.image} alt={selectedDestination.name} />
         </div>
         <div className="flex flex-col gap-4">
           <h1 className="text-white">
