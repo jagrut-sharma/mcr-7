@@ -16,15 +16,15 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/continent/:continentID",
+        path: "/:continentName",
         element: <Country />,
       },
       {
-        path: "/continent/:continentID/country/:countryID",
+        path: "/:continentName/:countryName",
         element: <Destination />,
       },
       {
-        path: "/continent/:continentID/country/:countryID/destination/:destinationID",
+        path: "/:continentName/:countryName/:destinationName",
         element: <Details />,
       },
     ],

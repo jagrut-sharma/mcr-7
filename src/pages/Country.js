@@ -4,10 +4,10 @@ import { data } from "../utils/data";
 import { FaLocationDot } from "react-icons/fa6";
 
 export default function Country() {
-  const { continentID } = useParams();
+  const { continentName } = useParams();
 
   const selectedContinent = data.continents.find(
-    ({ id }) => id === +continentID
+    ({ name }) => name === continentName
   );
 
   const { countries } = selectedContinent;
@@ -20,10 +20,7 @@ export default function Country() {
 
       <div className="mt-8 flex gap-8 justify-center">
         {countries.map((country) => (
-          <Link
-            to={`/continent/${continentID}/country/${country.id}`}
-            key={country.id}
-          >
+          <Link to={`/${continentName}/${country.name}`} key={country.id}>
             <div className="relative">
               <img
                 src={country.image}

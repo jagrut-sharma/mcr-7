@@ -3,18 +3,18 @@ import { useParams } from "react-router-dom";
 import { data } from "../utils/data";
 
 export default function Details() {
-  const { continentID, countryID, destinationID } = useParams();
+  const { continentName, countryName, destinationName } = useParams();
 
   const selectedContinent = data.continents.find(
-    ({ id }) => id === +continentID
+    ({ name }) => name === continentName
   );
 
   const selectedCountry = selectedContinent.countries.find(
-    ({ id }) => id === +countryID
+    ({ name }) => name === countryName
   );
 
   const selectedDestination = selectedCountry.destinations.find(
-    ({ id }) => id === +destinationID
+    ({ name }) => name === destinationName
   );
 
   return (
@@ -23,11 +23,16 @@ export default function Details() {
         {selectedDestination.name}
       </h1>
 
-      <div className="flex justify-center mt-4 w-[60%] gap-4">
-        <div>
-          <img src={selectedDestination.image} alt={selectedDestination.name} />
+      <div className="flex items-center justify-center mt-4 w-[70%] gap-4 h-fit">
+        <div className="h-[20rem] w-[40%]">
+          <img
+            src={selectedDestination.image}
+            alt={selectedDestination.name}
+            className="h-full w-full object-cover"
+          />
         </div>
-        <div className="flex flex-col gap-4">
+
+        <div className="flex flex-col gap-4 w-[60%]">
           <h1 className="text-white">
             <span className="text-violet-500">Description: </span>
             {selectedDestination.description}

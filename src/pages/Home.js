@@ -16,7 +16,7 @@ export default function Home() {
 
       <main className="flex gap-8 justify-center mt-8">
         {continents.map((continent) => (
-          <Link to={`/continent/${continent.id}`} key={continent.id}>
+          <Link to={`/${continent.name}`} key={continent.id}>
             <div className="relative">
               <img
                 src={continent.image}
